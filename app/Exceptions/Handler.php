@@ -3,6 +3,7 @@
 namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Validation\ValidationException;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -26,5 +27,17 @@ class Handler extends ExceptionHandler
         $this->reportable(function (Throwable $e) {
             //
         });
+    }
+
+    /*
+        Todas as exceções geradas pela falha na validação de campos passará por aqui e retornará um obj json.
+    */
+    protected function convertValidationExceptionToResponse(ValidationException $e, $request)
+    {
+        if ($e->response) {
+            return $e->response;
+        }
+
+        return response()->json($e->validator->errors()->getMessages(), 422);
     }
 }
