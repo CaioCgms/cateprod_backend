@@ -100,6 +100,7 @@ class CategoryController extends Controller
     function delete(int $id): Response
     {
         if (is_int($id)) {
+
             $category = CategoryModel::find($id);
 
             if ($category) {
@@ -138,7 +139,9 @@ class CategoryController extends Controller
         );
 
         if (is_int($id)) {
+
             $hasCategoryName = CategoryModel::query()->where('name', $params['name'])->whereNot('id', $id)->first('id');
+            
             $category = CategoryModel::find($id);
 
             // Ao atualizar, checa se o nome já está em uso por outra categoria

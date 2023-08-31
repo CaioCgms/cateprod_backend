@@ -71,8 +71,13 @@ class ProductController extends Controller
     function show(int $id): Response
     {
         if (is_int($id)) {
+
             $product = ProductModel::find($id);
-            if ($product['id']) {
+            
+            if ($product) {
+
+                $product->load('category');
+
                 return response($product, 200);
             } else {
                 return response('Produto não existe', 400);
@@ -89,8 +94,11 @@ class ProductController extends Controller
     function delete(int $id)
     {
         if (is_int($id)) {
+
             $product = ProductModel::find($id);
-            if ($product['id']) {
+
+            if ($product) {
+
                 $status = $product->delete();
 
                 if ($status) {
@@ -129,8 +137,10 @@ class ProductController extends Controller
         );
         
         if (is_int($id)) {
+
             $product = ProductModel::find($id);
-            if ($product['id']) {
+
+            if ($product) {
 
                 $product = $product->update([
                     'name' => $params['name'],
