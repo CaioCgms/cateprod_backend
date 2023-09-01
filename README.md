@@ -56,32 +56,32 @@ Execute o comando abaixo para poder executar os testes de funcionamento de cada 
 ##### Listar todos os produtos [GET]
 
 ```bash
-http://127.0.0.1/api/products
+http://127.0.0.1:8000/api/products
 ```
 
 ##### Listar um determinado produto (modifique o id pelo id do produto) [GET]
 
 ```bash
-http://127.0.0.1/api/products/id
+http://127.0.0.1:8000/api/products/id
 ```
 
 ##### Inserir um determinado produto [POST]
 
 ```bash
-http://127.0.0.1/api/products
+http://127.0.0.1:8000/api/products
 ```
 
 
 ##### Remover um determinado produto (modifique o id pelo id do produto) [DELETE]
 
 ```bash
-http://127.0.0.1/api/products/id
+http://127.0.0.1:8000/api/products/id
 ```
 
 ##### Atualizar um determinado produto (modifique o id pelo id do produto) [PUT]
 
 ```bash
-http://127.0.0.1/api/products/id
+http://127.0.0.1::8000/api/products/id
 ```
 ### ROTAS DE CATEGORIAS
 
@@ -89,29 +89,29 @@ http://127.0.0.1/api/products/id
 ##### Listar todas as categorias [GET]
 
 ```bash
-http://127.0.0.1/api/categories
+http://127.0.0.1:8000/api/categories
 ```
 
 ##### Listar uma determinada categoria (modifique o id pelo id da categoria) [GET]
 
 ```bash
-http://127.0.0.1/api/categories/id
+http://127.0.0.1:8000/api/categories/id
 ```
 
 ##### Inserir uma determinada categoria [POST]
 
 ```bash
-http://127.0.0.1/api/categories
+http://127.0.0.1:8000/api/categories
 ```
 
 ##### Remover uma determinada categoria (modifique o id pelo id da categoria) [DELETE]
 
 ```bash
-http://127.0.0.1/api/categories/id
+http://127.0.0.1:8000/api/categories/id
 ```
 
 ##### Atualizar uma determinada categoria (modifique o id pelo id da categoria) [PUT]
 
 ```bash
-http://127.0.0.1/categories/id
+http://127.0.0.1:8000/categories/id
 ```
