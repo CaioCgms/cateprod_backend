@@ -2,40 +2,50 @@
 
 O Projeto é um pequeno sistema de cadastro de produtos e categorias de produtos. O sistema faz uso do Laravel versão 10.21.0 e PHP versão 8.2.4.
 
-##  ANTES DE EXECUTAR O PROJETO 
+##  I - EXECUTE OS PASSOS ABAIXO ANTES DE EXECUTAR O PROJETO 
 
-1 - Realize o composer install para instalar os pacotes;
+#### 1 - Realize o composer install para instalar os pacotes;
 
 ```bash
     composer install
 ```
 
-[OPÇÃO 1] CRIAR AS TABELAS POR MIGRAÇÃO 
+#### 2 -  Crie um banco de dados Mysql com o nome de **cateprod**
 
-2.1 - Crie um banco de dados Mysql com o nome cateprod
+**Execute APENAS UMA das opções abaixo**
 
-2.2 - Execute migração para criar as tabelas necessárias php artisan migrate
+#### 3 - [OPÇÃO 1] CRIAR AS TABELAS POR MIGRAÇÃO 
+
+Execute o comando abaixo para poder realizar migração e assim criar as tabelas necessárias
 
 ```bash
     php artisan migrate
 ```
 
-[OPÇÃO 2] CRIAR TABELAS PELO SCRIPT SQL
+#### 3 - [OPÇÃO 2] CRIAR TABELAS PELO SCRIPT SQL
 
-2 - Execute o arquivo sql que está dentro do projeto em mysql/createDB.sql no banco de dados para criar as tabelas pelo script sql.
+Execute o script que (está dentro do arquivo em **mysql/createTables.sql**) no banco de dados criado anteriormente (**cateprod**) para assim criar as tabelas através o script sql.
 
-3 - Povoar o Banco de Dados com dados predefinidos
+#### 4 - Povoar o Banco de Dados com dados predefinidos
 ```bash
     php artisan db:seed
 ```
 
-## COMO EXECUTAR O PROJETO 
+## II - COMO EXECUTAR O PROJETO 
 
-1 - Execute o seguinte comando no diretório raiz do projeto php artisan serve
+#### 1 - Execute o seguinte comando no diretório raiz do projeto php artisan serve
 
-2 - O endereço para acessar o backend aparecerá no terminal, porém, por padrão deve ser o http://127.0.0.1:8000
+#### 2 - O endereço para acessar o backend aparecerá no terminal, porém, por padrão deve ser o http://127.0.0.1:8000
 
-## ROTAS DA API
+## III - COMO REALIZAR TESTES
+
+Execute o comando abaixo para poder executar os testes de funcionamento de cada rota. Lembre-se de checar se o sistema está connectado ao banco
+
+```bash
+    php artisan test
+```
+
+## IV - ROTAS DA API
 
 ### ROTAS DE PRODUTOS
 
