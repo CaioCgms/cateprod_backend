@@ -22,7 +22,12 @@ O Projeto é um pequeno sistema de cadastro de produtos e categorias de produtos
 
 [OPÇÃO 2] CRIAR TABELAS PELO SCRIPT SQL
 
-2- Execute o arquivo sql que está dentro do projeto em mysql/createDB.sql no banco de dados para criar as tabelas pelo script sql.
+2 - Execute o arquivo sql que está dentro do projeto em mysql/createDB.sql no banco de dados para criar as tabelas pelo script sql.
+
+3 - Povoar o Banco de Dados com dados predefinidos
+```bash
+    php artisan db:seed
+```
 
 ## COMO EXECUTAR O PROJETO 
 
