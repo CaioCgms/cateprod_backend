@@ -10,6 +10,7 @@
 2.1 - Crie um banco de dados **Mysql** com o nome **cateprod**
 <br />
 2.2 - Execute migração para criar as tabelas necessárias **php artisan migrate**
+<br />
 --- [OPÇÃO 2] CRIAR BANCO E TABELAS PELO SCRIPT SQL---
 <br />
 2- Execute o arquivo sql que está dentro do projeto em **mysql/createDB.sql** no banco de dados para crciar o banco e as tabelas
