@@ -6,11 +6,13 @@
 <br />
 1 - Realize o **composer  install** para instalar os pacotes;
 <br />
+<br />
 --- [OPÇÃO 1] CRIAR AS TABELAS POR MIGRAÇÃO ---
 <br />
 2.1 - Crie um banco de dados **Mysql** com o nome **cateprod**
 <br />
 2.2 - Execute migração para criar as tabelas necessárias **php artisan migrate**
+<br />
 <br />
 --- [OPÇÃO 2] CRIAR BANCO E TABELAS PELO SCRIPT SQL---
 <br />
