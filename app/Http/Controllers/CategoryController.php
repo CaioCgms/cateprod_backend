@@ -113,7 +113,7 @@ class CategoryController extends Controller
                 }
 
             } else {
-                return response('A categoria requisitada não existe');
+                return response('A categoria requisitada não existe', 404);
             }
         }
         
@@ -151,7 +151,7 @@ class CategoryController extends Controller
 
             // Verifica se categoria existe
             if (!$category) {
-                return response('A categoria requisitada não existe');
+                return response('A categoria requisitada não existe', 404);
             }
 
             $category->update([
