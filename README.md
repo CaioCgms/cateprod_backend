@@ -6,11 +6,13 @@
 <br />
 1 - Realize o **composer  install** para instalar os pacotes;
 <br />
+--- [OPÇÃO 1] CRIAR AS TABELAS POR MIGRAÇÃO ---
 2.1 - Crie um banco de dados **Mysql** com o nome **cateprod**
 <br />
 2.2 - Execute migração para criar as tabelas necessárias **php artisan migrate**
+--- [OPÇÃO 2] CRIAR BANCO E TABELAS PELO SCRIPT SQL---
 <br />
-3 [Outra forma]- Execute o arquivo sql que está dentro do projeto em **mysql/createDB.sql** no banco de dados para crciar o banco e as tabelas
+2- Execute o arquivo sql que está dentro do projeto em **mysql/createDB.sql** no banco de dados para crciar o banco e as tabelas
 
 ## ---COMO EXECUTAR O PROJETO ----
 <br />
