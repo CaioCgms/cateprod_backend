@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ProductModel;
+use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -16,10 +17,12 @@ class ProductController extends Controller
     {
         $search = $request->validate(
             [
-                'name' => 'string|max:128|min:3'
+                'name' => 'string|max:128|min:3',
+                'category_id' => 'integer|exists:categories,id'
             ],
             [
-                'name' => 'É necessário fornecer um parâmetro de busca válido, com 3 a 128 caracteres.'
+                'name' => 'É necessário fornecer um parâmetro de busca válido, com 3 a 128 caracteres.',
+                'category_id.*' => 'Categoria não existe ou é inválido'
             ]
         );
 
@@ -30,9 +33,14 @@ class ProductController extends Controller
             $productQuery->where('name', 'like', "%$search[name]%");
         }
 
+        if (isset($search['category_id'])) {
+            $productQuery->where('category_id', $search['category_id']);
+        }
+
+        $productQuery->with('category');
         $productQuery->orderBy('name', 'ASC');
 
-        return response($productQuery->get('id', 'name', 'created', 'updated'));
+        return response($productQuery->get(['id', 'name', 'created', 'updated', 'category_id']), 200);
     }
 
     /**
@@ -58,6 +66,8 @@ class ProductController extends Controller
 
         $product = ProductModel::create([
             'name' => $params['name'],
+            'created' => new DateTime(),
+            'updated' => new DateTime(),
             'category_id' => $params['category_id']
         ]);
 
@@ -144,6 +154,7 @@ class ProductController extends Controller
 
                 $product = $product->update([
                     'name' => $params['name'],
+                    'updated' => new DateTime(),
                     'category_id' => $params['category_id']
                 ]);
 
